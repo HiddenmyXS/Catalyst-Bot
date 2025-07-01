@@ -61,20 +61,6 @@ client.once('ready', async (c) => {
     }
 });
 
-client.on('messageCreate', message => {
-
-    const lowerCase = message.content.toLowerCase();
-
-    if(lowerCase === 'nigga'){
-        message.delete()
-    } else if (lowerCase === 'adit'){
-        message.delete()
-    } else if (lowerCase === 'hitam'){
-        message.delete()
-    }
-})
-
-// Bot Joined the Server! //
 client.on('guildCreate', async guild => {
     let welcomeChannel = null;
 
@@ -126,12 +112,10 @@ client.on('guildCreate', async guild => {
     }
 })
 
-// Distube //
 client.distube = new DisTube(client, {
     emitNewSongOnly: true
 });
 
-// --- DisTube Event Handlers ---
 client.distube
     .on('playSong', (queue, song) => {
         const playEmbed = new EmbedBuilder()
